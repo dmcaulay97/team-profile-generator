@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generator = require("./src/generator.js");
-const { create } = require("domain");
+const { type } = require("os");
 
 let questions = [
     {
