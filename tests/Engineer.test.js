@@ -2,7 +2,7 @@ const Engineer = require("../lib/Engineer.js");
 
 describe("Engineer class", () => {
     describe("getGithub", () => {
-        it("should return Enfineer's github username", () => {
+        it("should return Engineer's github username", () => {
             expect(new Engineer("name", "email", 1, "github").getGithub()).toBe("github");
         })
     });
