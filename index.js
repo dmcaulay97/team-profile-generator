@@ -5,7 +5,6 @@ const { type } = require("os");
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
-const Employee = require("./lib/Employee.js");
 
 let questions = [
     {
@@ -40,7 +39,7 @@ function makeEngineer() {
     questions.splice(3, 1, { type: "input", message: "Enter Employee's Github Username:", name: "github" });
     return inquirer.prompt(questions)
         .then(({ name, email, id, github }) => {
-            const employee = new Manager(name, email, id, github);
+            const employee = new Engineer(name, email, id, github);
             return generator.generateEmployee(employee)
         })
 }
@@ -49,7 +48,7 @@ function makeIntern() {
     questions.splice(3, 1, { type: "input", message: "Enter Employee's School: ", name: "school" });
     return inquirer.prompt(questions)
         .then(({ name, email, id, school }) => {
-            const employee = new Manager(name, email, id, school);
+            const employee = new Intern(name, email, id, school);
             return generator.generateEmployee(employee)
         })
 }
