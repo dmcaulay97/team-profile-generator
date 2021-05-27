@@ -2,15 +2,15 @@
 function generateEmployee(employee) {
     let icon;
     let attr;
-    if (employee.getRole() == "manager") {
+    if (employee.getRole() == "Manager") {
         icon = `<i class="fas fa-clipboard"></i>`
-        attr = `Office Number: `
-    } else if (employee.getRole() == "engineer") {
+        attr = `Office Number: ${employee.getOffice()}`
+    } else if (employee.getRole() == "Engineer") {
         icon = `<i class="fas fa-code-branch"></i>`
-        attr = `Github Profile: `
+        attr = `Github Profile: ${employee.getGithub()}`
     } else {
         icon = `<i class="fas fa-graduation-cap"></i>`
-        attr = `School: `
+        attr = `School: ${employee.getSchool()}`
     }
     return `
 <div class="card">
@@ -21,7 +21,7 @@ function generateEmployee(employee) {
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${employee.getId()}</li>
         <li class="list-group-item">Email: ${employee.getEmail()}</li>
-        <li class="list-group-item">${attr}${employee.getOffice()}</li>
+        <li class="list-group-item">${attr}</li>
     </ul>
 </div>\n`
 }

@@ -53,6 +53,7 @@ function makeIntern() {
         })
 }
 
+// This function executes the creation of the html page
 function createPage(str) {
     const team = generator.teamPage(str);
     fs.writeFile("./dist/index.html", team, (err) => {
@@ -60,6 +61,7 @@ function createPage(str) {
     })
 }
 
+//This function asks if more employees should be added and if so what kind. If not it starts the function to create the html page
 function askToContinue(codeString) {
     inquirer.prompt([{ type: "list", message: "Would you like to add another team member?", name: "add", choices: ["Yes, add an Engineer", "Yes, add an Intern", "No, I'm done"] }])
         .then(({ add }) => {
@@ -81,6 +83,7 @@ function askToContinue(codeString) {
         })
 }
 
+//Initializing function. Since all groups have a manger the function begins by creating a manager.
 function init() {
     makeManager()
         .then((data) => {
