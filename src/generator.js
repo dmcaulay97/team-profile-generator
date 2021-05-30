@@ -7,7 +7,7 @@ function generateEmployee(employee) {
         attr = `Office Number: ${employee.getOffice()}`
     } else if (employee.getRole() == "Engineer") {
         icon = `<i class="fas fa-code-branch"></i>`
-        attr = `Github Profile: ${employee.getGithub()}`
+        attr = `Github Profile: <a href="https://github.com/${employee.getGithub()}">Github Profile</a>`
     } else {
         icon = `<i class="fas fa-graduation-cap"></i>`
         attr = `School: ${employee.getSchool()}`
@@ -20,7 +20,7 @@ function generateEmployee(employee) {
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${employee.getId()}</li>
-        <li class="list-group-item">Email: ${employee.getEmail()}</li>
+        <li class="list-group-item">Email: <a href="mailto:${employee.getEmail()}">Send Email</a> </li>
         <li class="list-group-item">${attr}</li>
     </ul>
 </div>\n`
