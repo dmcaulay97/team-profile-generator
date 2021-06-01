@@ -84,6 +84,7 @@ function askToContinue(codeString) {
 
 //Initializing function. Since all groups have a manger the function begins by creating a manager.
 function init() {
+    console.log("First, enter manager's information.")
     makeManager()
         .then((data) => {
             askToContinue(data)
